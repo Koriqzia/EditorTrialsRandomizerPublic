@@ -1,0 +1,128 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EditorTrialsRandomiser"
+        xmlns:Classes="clr-namespace:EditorTrialsRandomiser.Classes" x:Class="EditorTrialsRandomiser.MainWindow"
+        mc:Ignorable="d"
+        Title="Editor Trials Randomizer" Height="623" Width="761" Icon="Randomizer-Logo.ico" MinWidth="760" MinHeight="623">
+    <Grid Background="#FF0E0E0E" Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Content="EDITOR TRIALS RANDOMIZER" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="520" Background="#00DDDDDD" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="36" BorderBrush="#FF6000FC" Grid.ColumnSpan="2"/>
+        <Label Content="Choose Editing Program Used for Effects" HorizontalAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Corbel Light" Grid.ColumnSpan="2"/>
+        <Grid HorizontalAlignment="Center" Height="43" Margin="0,105,0,0" VerticalAlignment="Top" Width="496" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AfterEffectsButton" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" Width="236" Height="42" Click="EditingProgramButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/After-Effects-Library.png"/>
+                </Button.Background>
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.ae}"/>
+                </Button.DataContext>
+            </Button>
+            <Button x:Name="SonyVegasButton"  HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" Width="236" Height="42" Grid.Column="1" BorderBrush="Black" Click="EditingProgramButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/Photoshop-Library-HD.png"/>
+                </Button.Background>
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.vegas}"/>
+                </Button.DataContext>
+            </Button>
+        </Grid>
+        <Label Content="Created by Airyz &amp; Koriqzia" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Bottom" Background="#00000000" Foreground="White"/>
+        <Grid x:Name="EffectsPanel" Height="172" Margin="16,160,10,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="727" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="RE:VISION FX 17.0" HorizontalAlignment="Left" Margin="57,10,0,0" VerticalAlignment="Top" Width="173" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.reVision}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="SAPPHIRE FX 2019" HorizontalAlignment="Left" Margin="237,10,0,0" VerticalAlignment="Top" Width="173" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.ColumnSpan="2">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.sapphire}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="BCC 2019" HorizontalAlignment="Left" Margin="51,10,0,0" VerticalAlignment="Top" Width="92" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.Column="1">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.bcc}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="DIGIEFFECTS SUITE" HorizontalAlignment="Left" Margin="148,10,0,0" VerticalAlignment="Top" Width="160" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.Column="1">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.digiEffects}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="RG TRAPCODE" HorizontalAlignment="Left" Margin="91,90,0,0" VerticalAlignment="Top" Width="160" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.rgTrapcode}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="RG MAGIC BULLET" HorizontalAlignment="Left" Margin="256,90,0,0" VerticalAlignment="Top" Width="160" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.ColumnSpan="2">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.rgMagicBullet}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="RG UNIVERSE" HorizontalAlignment="Left" Margin="57,90,0,0" VerticalAlignment="Top" Width="117" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.Column="1">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.rgUniverse}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="RG VFX" HorizontalAlignment="Left" Margin="179,90,0,0" VerticalAlignment="Top" Width="95" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.Column="1">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.rgVFX}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="FXHOME IGNITE PRO 4.1.9" HorizontalAlignment="Left" Margin="9,50,0,0" VerticalAlignment="Top" Width="221" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.ignite}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="VIDEO COPILOT" HorizontalAlignment="Left" Margin="235,50,0,0" VerticalAlignment="Top" Width="146" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.ColumnSpan="2">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.videoCopilot}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="OMINO SUITE" HorizontalAlignment="Left" Margin="22,50,0,0" VerticalAlignment="Top" Width="120" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.Column="1">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.omino}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="METTLE PLUGINS 2018.10" HorizontalAlignment="Left" Margin="147,50,0,0" VerticalAlignment="Top" Width="209" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.Column="1">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.mettle}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="NEW BLUE TOTAL FX 5.0" HorizontalAlignment="Left" Margin="170,130,0,0" VerticalAlignment="Top" Width="209" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.ColumnSpan="2">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.newBlue}"/>
+                </Button.DataContext>
+            </Button>
+            <Button Content="ROWBYTE PLUGINS" HorizontalAlignment="Left" Margin="20,130,0,0" VerticalAlignment="Top" Width="174" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.Column="1">
+                <Button.DataContext>
+                    <Classes:ButtonContext effects="{x:Static Classes:Lists.rowbyte}"/>
+                </Button.DataContext>
+            </Button>
+        </Grid>
+        <TextBlock x:Name="OutputLabel" Text="1:&#x0a;2:&#x0a;3:&#x0a;4:&#x0a;5:&#x0a;" Margin="10,390,10,0" VerticalAlignment="Top" Foreground="White" FontSize="24" TextAlignment="Center" FontFamily="Corbel Light" Height="145" Grid.ColumnSpan="2"/>
+        <Grid HorizontalAlignment="Center" Height="42" Margin="0,343,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="2">
+            <Button x:Name="GenerateEffectsListButton" Content="RANDOMIZE" HorizontalAlignment="Left" Margin="4,3,0,0" VerticalAlignment="Top" Width="116" Height="35" Background="#FF6000FC" BorderBrush="White" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="GenerateEffectsListButton_Click"/>
+            <Button x:Name="SaveEffectsListButton" Content="SAVE" HorizontalAlignment="Left" Margin="125,3,0,0" VerticalAlignment="Top" Width="116" Height="35" Background="#FF6000FC" BorderBrush="White" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="SaveEffectsListButton_Click"/>
+        </Grid>
+        <Button x:Name="otherEffectsButton" Content="Other 3rd Party Plugins" HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="193" Height="35" Background="#00000000" BorderBrush="#FF6000FC" Foreground="White" FontSize="18" FontFamily="Segoe UI Light" Click="EffectToggle" Grid.Column="1">
+            <Button.DataContext>
+                <Classes:ButtonContext effects="{x:Static Classes:Lists.other}"/>
+            </Button.DataContext>
+        </Button>
+
+    </Grid>
+</Window>
